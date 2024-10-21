@@ -1,0 +1,86 @@
+/* Navbar.css */
+
+/* Custom animation for logo spinning */
+@keyframes logo-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Add the spinning effect for the logo */
+  .animate-logo-spin:hover {
+    animation: logo-spin 3s linear infinite;
+  }
+  
+  /* Smooth transition and hover effects for links */
+  .navbar-links .nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #006400;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem;
+  }
+  
+  /* Hover underline effect for links */
+  .navbar-links .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #006400;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .navbar-links .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile menu transition */
+  .navbar-links {
+    position: absolute;
+    width: 100%;
+    background-color: #f87171; /* Red-200 in Tailwind */
+    top: -100vh; /* Hidden initially */
+    transition: top 0.3s ease-in-out;
+  }
+  
+  /* Show links when active on mobile */
+  .navbar-links.active {
+    top: 4rem; /* Position below the navbar */
+  }
+  
+  /* Responsive behavior for desktop and mobile */
+  @media (min-width: 768px) {
+    .navbar-links {
+      position: static;
+      width: auto;
+      background-color: transparent;
+      display: flex;
+    }
+  }
+  
+  /* Responsive behavior for mobile */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      padding-top: 1rem;
+    }
+  
+    .nav-item {
+      margin: 0.5rem 0;
+    }
+  }
+  
