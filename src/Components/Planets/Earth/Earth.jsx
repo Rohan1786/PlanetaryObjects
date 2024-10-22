@@ -35,9 +35,9 @@ const Earth = () => {
         <div className="earth-container flex flex-col md:flex-row items-center space-y-6 md:space-y-0">
           {/* Rotating Earth Image with click event to play sound */}
           <img
-            src="earth.jpg"
+            src="earth.png"
             alt="Earth"
-            className="earth w-40 md:w-56 rounded-full rotating-earth mx-auto"
+            className="earth w-56 md:w-80 rotating-earth mx-auto"
             onClick={playSound} // Play sound when image is clicked
           />
           <div className="md:ml-6 flex-col space-y-4 text-center md:text-left">

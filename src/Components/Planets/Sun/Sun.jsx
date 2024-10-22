@@ -26,7 +26,7 @@ const Sun = () => {
           <img
             src="sun.png"
             alt="Sun"
-            className="earth w-60 md:w-80 rounded-full rotating-earth mx-auto"
+            className="earth w-80 md:w-96 rounded-full rotating-earth mx-auto"
             onClick={playSound} // Play sound when image is clicked
           />
           <div className="md:ml-6 flex-col space-y-4 text-center md:text-left">
@@ -35,10 +35,8 @@ const Sun = () => {
             </h1>
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   The Sun is the largest object in our solar system, a massive ball of hot gases primarily composed of hydrogen and helium. 
-  It generates energy through nuclear fusion, which powers the light and heat essential for life on Earth. 
-  The Sun's gravity holds the entire solar system together, pulling planets, moons, and other objects into orbit around it. 
-  With a surface temperature of about 5,500 degrees Celsius (9,932 degrees Fahrenheit), the Sun plays a critical role in maintaining the balance 
-  of the solar system and sustaining life on Earth.
+  It generates energy through nuclear fusion, pulling planets, moons, and other objects into orbit around it. 
+  With a surface temperature of about 5,500 degrees Celsius 
 </p>
 
             <p className="text-base md:text-lg leading-relaxed font-IBM">
