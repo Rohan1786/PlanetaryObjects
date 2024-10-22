@@ -26,7 +26,7 @@ const Mercury = () => {
           <img
             src="mercury.gif"
             alt="mercury"
-            className="earth w-40 md:w-56 rotating-earth mx-auto"
+            className="earth w-40 md:w-56 rounded-full rotating-earth mx-auto"
             onClick={playSound} // Play sound when image is clicked
           />
           <div className="md:ml-6 flex-col space-y-4 text-center md:text-left">
