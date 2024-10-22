@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './PlanetarySystem.css';
 
 const planetsData = [
@@ -14,31 +14,82 @@ const planetsData = [
 
 const PlanetarySystem = () => {
   const [selectedPlanet, setSelectedPlanet] = useState(null);
+  const planetaryRotationRef = useRef(null);
+  const planetarySystemRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [lastMouseX, setLastMouseX] = useState(0);
+  const [lastMouseY, setLastMouseY] = useState(0);
+  const [currentRotationX, setCurrentRotationX] = useState(30); // initial tilt
+  const [currentRotationY, setCurrentRotationY] = useState(45); // initial Y rotation
 
   const handlePlanetClick = (planet) => {
     setSelectedPlanet(planet);
   };
 
+  useEffect(() => {
+    const planetarySystem = planetarySystemRef.current;
+
+    const handleMouseMove = (event) => {
+      if (!isDragging) return;
+
+      const deltaX = event.clientX - lastMouseX;
+      const deltaY = event.clientY - lastMouseY;
+
+      setCurrentRotationY((prevY) => prevY + deltaX * 0.1); // adjust rotation speed
+      setCurrentRotationX((prevX) => prevX - deltaY * 0.1);
+
+      planetaryRotationRef.current.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
+
+      setLastMouseX(event.clientX);
+      setLastMouseY(event.clientY);
+    };
+
+    const handleMouseDown = (event) => {
+      setIsDragging(true);
+      setLastMouseX(event.clientX);
+      setLastMouseY(event.clientY);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    planetarySystem.addEventListener('mousemove', handleMouseMove);
+    planetarySystem.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      planetarySystem.removeEventListener('mousemove', handleMouseMove);
+      planetarySystem.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, lastMouseX, lastMouseY, currentRotationX, currentRotationY]);
+
   return (
-    <div className="planetary-system text-white">
+    <div className="planetary-system text-white" ref={planetarySystemRef}>
+      {/* Sun in the center */}
       <div className="sun">
         <img src="sun.jpg" alt="Sun" />
       </div>
 
-      <div className="orbit-container">
-        {planetsData.map((planet, index) => (
-          <div key={index} className={`orbit orbit-${index + 1}`}>
-            <img
-              src={planet.image}
-              alt={planet.name}
-              className="planet"
-              onClick={() => handlePlanetClick(planet)}
-              style={{ animationDelay: `${index * 2}s` }} // staggered animation
-            />
-          </div>
-        ))}
+      {/* 3D rotating planetary system */}
+      <div className="planetary-rotation" ref={planetaryRotationRef}>
+        <div className="orbit-container">
+          {planetsData.map((planet, index) => (
+            <div key={index} className={`orbit orbit-${index + 1}`}>
+              <img
+                src={planet.image}
+                alt={planet.name}
+                className="planet"
+                onClick={() => handlePlanetClick(planet)}
+                style={{ animationDelay: `${index * 2}s` }} // staggered animation for planet orbits
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
+      {/* Information box for the selected planet */}
       {selectedPlanet && (
         <div className="info-box">
           <h2>{selectedPlanet.name}</h2>

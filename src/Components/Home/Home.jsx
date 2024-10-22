@@ -6,8 +6,7 @@ import PlanetarySystem from '../Planet/PlanetarySystem'
 const Home = () => {
   return (
     <div>
-        {/* <Navbar/>
-      <Header/> */}
+        
       <PlanetarySystem/>
     </div>
   )

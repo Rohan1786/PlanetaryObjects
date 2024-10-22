@@ -8,8 +8,24 @@
     align-items: center;
     background-color: black;
     overflow: hidden;
-  }
-  
+    perspective: 1000px; /* Adds 3D perspective */
+}
+
+/* 3D Container to manage the rotation */
+.planetary-rotation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(45deg); /* Default 3D view angle */
+    transition: transform 1s ease;
+}
+
+/* Hover to rotate the planetary system */
+.planetary-system:hover .planetary-rotation {
+    transform: rotateX(0deg) rotateY(0deg); /* Rotates the system back to default on hover */
+}
+
 /* Sun at the center */
 .sun {
     position: absolute;
@@ -19,7 +35,7 @@
 }
 
 .sun img {
-    width: 300px; /* Increase size of the Sun */
+    width: auto; /* Sun size */
     height: auto;
     animation: spin 1000s linear infinite; /* Spinning effect */
 }
@@ -29,16 +45,26 @@
     position: relative;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* Dotted line for each orbit */
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dotted white; /* Dotted line for orbit */
+    transform-style: preserve-3d;
 }
 
 /* Planets */
 .planet {
-    width: 50px; /* Reduced size of planets for more space */
+    width: 50px; /* Planet size */
     height: 50px;
     border-radius: 50%;
     position: absolute;
     cursor: pointer;
     transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
 /* Hover effect to enlarge planets */
@@ -52,60 +78,142 @@
     to { transform: rotate(360deg); }
 }
 
-/* Orbits for planets with different distances */
+/* Individual orbits for each planet */
 .orbit-1 {
-    position: absolute;
-    width: 400px; /* Increased distance */
+    width: 400px;
     height: 400px;
     top: 50%;
     left: 50%;
     margin-left: -200px;
     margin-top: -200px;
-    animation: orbit 10s linear infinite; /* Mercury */
+    animation: orbit 10s linear infinite;
 }
 
 .orbit-2 {
-    position: absolute;
-    width: 500px; /* Increased distance */
+    width: 500px;
     height: 500px;
     top: 50%;
     left: 50%;
     margin-left: -250px;
     margin-top: -250px;
-    animation: orbit 12s linear infinite; /* Venus */
+    animation: orbit 12s linear infinite;
 }
 
 .orbit-3 {
-    position: absolute;
-    width: 600px; /* Increased distance */
+    width: 600px;
     height: 600px;
     top: 50%;
     left: 50%;
     margin-left: -300px;
     margin-top: -300px;
-    animation: orbit 14s linear infinite; /* Earth */
+    animation: orbit 14s linear infinite;
 }
 
 .orbit-4 {
-    position: absolute;
-    width: 700px; /* Increased distance */
+    width: 700px;
     height: 700px;
     top: 50%;
     left: 50%;
     margin-left: -350px;
     margin-top: -350px;
-    animation: orbit 16s linear infinite; /* Mars */
+    animation: orbit 16s linear infinite;
 }
 
 .orbit-5 {
-    position: absolute;
-    width: 800px; /* Increased distance */
+    width: 800px;
     height: 800px;
     top: 50%;
     left: 50%;
     margin-left: -400px;
     margin-top: -400px;
-    animation: orbit 18s linear infinite; /* Jupiter */
+    animation: orbit 18s linear infinite;
+}
+
+.orbit-6 {
+    width: 900px;
+    height: 900px;
+    top: 50%;
+    left: 50%;
+    margin-left: -450px;
+    margin-top: -450px;
+    animation: orbit 20s linear infinite;
+}
+
+.orbit-7 {
+    width: 1000px;
+    height: 1000px;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -500px;
+    animation: orbit 22s linear infinite;
+}
+
+.orbit-8 {
+    width: 1100px;
+    height: 1100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -550px;
+    margin-top: -550px;
+    animation: orbit 24s linear infinite;
+}
+
+/* Planets rotating along their respective orbits */
+.planet-1 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: gray; /* Mercury */
+}
+
+.planet-2 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: orange; /* Venus */
+}
+
+.planet-3 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: blue; /* Earth */
+}
+
+.planet-4 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: red; /* Mars */
+}
+
+.planet-5 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: brown; /* Jupiter */
+}
+
+.planet-6 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: orange; /* Saturn */
+}
+
+.planet-7 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: lightblue; /* Uranus */
+}
+
+.planet-8 {
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: darkblue; /* Neptune */
 }
 
 /* Spinning effect for the Sun */
@@ -125,3 +233,74 @@
     border-radius: 10px;
     text-align: center;
 }
+/* .planetary-system {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 2000px;
+  cursor: grab;
+}
+
+.sun img {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planetary-rotation {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-out;
+}
+
+.orbit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dotted white;
+}
+
+.planet {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.planet:hover {
+  transform: scale(1.2) translateZ(30px);
+}
+
+.info-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f39c12;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+} */
