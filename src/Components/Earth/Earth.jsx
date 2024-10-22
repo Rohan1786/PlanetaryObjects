@@ -37,7 +37,7 @@ const Earth = () => {
             to="/solarsystem"
             className="text-white hover:text-yellow-400 text-lg transition-all duration-300"
           >
-            Contact
+            Visit Our Solar System
           </Link>
               </button>
             </div>
