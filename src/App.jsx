@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // import Home from './Components/Home/Home';
-import Earth from './Components/Earth/Earth';
+
 import PlanetarySystem from './Components/Planet/PlanetarySystem';
+import Earth from './Components/Planets/Earth/Earth';
 
 
 const App = () => {

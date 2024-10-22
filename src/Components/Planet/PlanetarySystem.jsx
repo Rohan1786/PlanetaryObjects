@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './PlanetarySystem.css'
-import Earth from '../Earth/Earth';
+import Earth from '../Planets/Earth/Earth';
+
 
 const planetsData = [
   { name: 'Mercury', info: 'Mercury is the closest planet to the Sun.', image: 'mercury.gif'},
