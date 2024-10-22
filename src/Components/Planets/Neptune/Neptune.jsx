@@ -36,8 +36,7 @@ const Neptune = () => {
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Neptune is the eighth and farthest planet from the Sun in our solar system, known for its striking deep blue color, which is a result of methane in its atmosphere. 
   It is an ice giant, similar in composition to Uranus, with a dynamic atmosphere that features the fastest winds in the solar system, reaching speeds of over 2,000 km/h (1,200 mph). 
-  Neptune has a faint ring system and 14 known moons, with Triton being the largest and geologically active. 
-  Despite its distance from the Sun, Neptune has a unique weather system, including dark storms that can be similar to Jupiter's Great Red Spot.
+  Neptune has a faint ring system and 14 known moons,  Neptune has a unique weather system, including dark storms that can be similar to Jupiter's Great Red Spot.
 </p>
 
             <p className="text-base md:text-lg leading-relaxed font-IBM">

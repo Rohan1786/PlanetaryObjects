@@ -36,9 +36,7 @@ const Vinus = () => {
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Venus is often called Earth's "sister planet" due to its similar size and composition, but it has a vastly different environment. 
   It is the second planet from the Sun and the hottest in our solar system, with surface temperatures reaching around 465°C (869°F). 
-  This extreme heat is due to its thick atmosphere, which is composed mostly of carbon dioxide and traps heat in a runaway greenhouse effect. 
-  Venus also has clouds of sulfuric acid and experiences crushing atmospheric pressure at its surface. 
-  Despite its harsh conditions, Venus remains a subject of fascination due to its mysterious, slow rotation and retrograde spin.
+  This extreme heat is due to its thick atmosphere Venus remains a subject of fascination due to its mysterious, slow rotation and retrograde spin.
 </p>
 
             <p className="text-base md:text-lg leading-relaxed font-IBM">

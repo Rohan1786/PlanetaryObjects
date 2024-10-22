@@ -35,9 +35,7 @@ const Mars = () => {
             </h1>
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Mars, the fourth planet from the Sun, is often called the "Red Planet" due to its reddish appearance caused by iron oxide (rust) on its surface. 
-  It has the largest volcano in the solar system, Olympus Mons, and a canyon, Valles Marineris, that dwarfs the Grand Canyon. 
-  Mars' thin atmosphere is mostly carbon dioxide, and its cold, desert-like conditions make it a challenging place for life. 
-  However, Mars remains a focus of exploration due to evidence that liquid water once flowed on its surface, raising the possibility of ancient life.
+  It has the largest volcano in the solar system, Olympus Mons, and a canyon, Mars remains a focus of exploration due to evidence that liquid water once flowed on its surface, raising the possibility of ancient life.
 </p>
 
             <p className="text-base md:text-lg leading-relaxed font-IBM">

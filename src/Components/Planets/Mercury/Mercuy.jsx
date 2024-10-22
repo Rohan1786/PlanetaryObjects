@@ -26,7 +26,7 @@ const Mercury = () => {
           <img
             src="mercury.gif"
             alt="mercury"
-            className="earth w-40 md:w-56 rounded-full rotating-earth mx-auto"
+            className="earth w-40 md:w-56 rotating-earth mx-auto"
             onClick={playSound} // Play sound when image is clicked
           />
           <div className="md:ml-6 flex-col space-y-4 text-center md:text-left">
@@ -38,8 +38,7 @@ const Mercury = () => {
 
 Mercury is only slightly larger than Earth's Moon. 
 Its surface is covered in tens of thousands of impact craters. 
-Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system 
-– that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 
+Despite its proximity to the Sun, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 
 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.
             </p>
             <p className="text-base md:text-lg leading-relaxed font-IBM">

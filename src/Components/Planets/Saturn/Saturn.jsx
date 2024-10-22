@@ -35,9 +35,7 @@ const Saturn = () => {
             </h1>
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Saturn, the sixth planet from the Sun, is best known for its stunning system of rings made of ice and rock. 
-  It is a gas giant primarily composed of hydrogen and helium, similar to Jupiter but less dense. 
-  Saturn is so light that it would float in water, if a large enough body of water existed! 
-  The planet has over 80 moons, including Titan, which is larger than the planet Mercury. 
+  It is a gas giant primarily composed of hydrogen and helium, which is larger than the planet Mercury. 
   Saturn's majestic rings and unique characteristics make it one of the most fascinating planets in the solar system.
 </p>
 

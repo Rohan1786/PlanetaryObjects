@@ -36,8 +36,7 @@ const Jupiter = () => {
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Jupiter is the largest planet in our solar system, a massive gas giant primarily made of hydrogen and helium. 
   Known for its Great Red Spot, a giant storm larger than Earth, Jupiter’s atmosphere is full of swirling clouds and intense winds. 
-  It has at least 79 moons, including the four large Galilean moons—Io, Europa, Ganymede, and Callisto. 
-  Jupiter’s immense gravity helps protect the inner planets from asteroids and comets, making it a crucial player in the dynamics of our solar system.
+  It has at least 79 moons,  making it a crucial player in the dynamics of our solar system.
 </p>
 
             <p className="text-base md:text-lg leading-relaxed font-IBM">

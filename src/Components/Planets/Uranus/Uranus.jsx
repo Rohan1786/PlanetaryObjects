@@ -35,8 +35,7 @@ const Uranus = () => {
             </h1>
             <p className="text-base md:text-lg leading-relaxed font-IBM">
   Uranus is the seventh planet from the Sun and is unique for its sideways rotation. 
-  Unlike other planets, it spins on its side, possibly due to a collision with an Earth-sized object long ago. 
-  Known for its pale blue color caused by methane in its atmosphere, Uranus is an ice giant with extremely cold temperatures, reaching as low as -224°C (-371°F). 
+  Unlike other planets, Uranus is an ice giant with extremely cold temperatures, reaching as low as -224°C (-371°F). 
   It has faint rings and 27 known moons, making it a mysterious and distant member of our solar system.
 </p>
 
