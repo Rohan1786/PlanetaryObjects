@@ -19,8 +19,8 @@ const PlanetarySystem = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [lastMouseX, setLastMouseX] = useState(0);
   const [lastMouseY, setLastMouseY] = useState(0);
-  const [currentRotationX, setCurrentRotationX] = useState(30); // initial tilt
-  const [currentRotationY, setCurrentRotationY] = useState(45); // initial Y rotation
+  const [currentRotationX, setCurrentRotationX] = useState(30);
+  const [currentRotationY, setCurrentRotationY] = useState(45);
 
   const handlePlanetClick = (planet) => {
     setSelectedPlanet(planet);
@@ -31,15 +31,11 @@ const PlanetarySystem = () => {
 
     const handleMouseMove = (event) => {
       if (!isDragging) return;
-
       const deltaX = event.clientX - lastMouseX;
       const deltaY = event.clientY - lastMouseY;
-
-      setCurrentRotationY((prevY) => prevY + deltaX * 0.1); // adjust rotation speed
+      setCurrentRotationY((prevY) => prevY + deltaX * 0.1);
       setCurrentRotationX((prevX) => prevX - deltaY * 0.1);
-
       planetaryRotationRef.current.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
-
       setLastMouseX(event.clientX);
       setLastMouseY(event.clientY);
     };
@@ -54,25 +50,51 @@ const PlanetarySystem = () => {
       setIsDragging(false);
     };
 
+    const handleTouchMove = (event) => {
+      if (!isDragging) return;
+      const touch = event.touches[0];
+      const deltaX = touch.clientX - lastMouseX;
+      const deltaY = touch.clientY - lastMouseY;
+      setCurrentRotationY((prevY) => prevY + deltaX * 0.1);
+      setCurrentRotationX((prevX) => prevX - deltaY * 0.1);
+      planetaryRotationRef.current.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
+      setLastMouseX(touch.clientX);
+      setLastMouseY(touch.clientY);
+    };
+
+    const handleTouchStart = (event) => {
+      const touch = event.touches[0];
+      setIsDragging(true);
+      setLastMouseX(touch.clientX);
+      setLastMouseY(touch.clientY);
+    };
+
+    const handleTouchEnd = () => {
+      setIsDragging(false);
+    };
+
     planetarySystem.addEventListener('mousemove', handleMouseMove);
     planetarySystem.addEventListener('mousedown', handleMouseDown);
+    planetarySystem.addEventListener('touchmove', handleTouchMove);
+    planetarySystem.addEventListener('touchstart', handleTouchStart);
     document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       planetarySystem.removeEventListener('mousemove', handleMouseMove);
       planetarySystem.removeEventListener('mousedown', handleMouseDown);
+      planetarySystem.removeEventListener('touchmove', handleTouchMove);
+      planetarySystem.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchend', handleTouchEnd);
     };
   }, [isDragging, lastMouseX, lastMouseY, currentRotationX, currentRotationY]);
 
   return (
     <div className="planetary-system text-white" ref={planetarySystemRef}>
-      {/* Sun in the center */}
       <div className="sun">
         <img src="sun.jpg" alt="Sun" />
       </div>
-
-      {/* 3D rotating planetary system */}
       <div className="planetary-rotation" ref={planetaryRotationRef}>
         <div className="orbit-container">
           {planetsData.map((planet, index) => (
@@ -82,14 +104,12 @@ const PlanetarySystem = () => {
                 alt={planet.name}
                 className="planet"
                 onClick={() => handlePlanetClick(planet)}
-                style={{ animationDelay: `${index * 2}s` }} // staggered animation for planet orbits
+                style={{ animationDelay: `${index * 2}s` }}
               />
             </div>
           ))}
         </div>
       </div>
-
-      {/* Information box for the selected planet */}
       {selectedPlanet && (
         <div className="info-box">
           <h2>{selectedPlanet.name}</h2>
