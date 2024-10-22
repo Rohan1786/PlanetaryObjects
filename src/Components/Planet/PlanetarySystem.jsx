@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PlanetarySystem.css';
+import './PlanetarySystem.css'
+import Earth from '../Earth/Earth';
 
 const planetsData = [
-  { name: 'Mercury', info: 'Mercury is the closest planet to the Sun.', image: 'mercury.gif' },
+  { name: 'Mercury', info: 'Mercury is the closest planet to the Sun.', image: 'mercury.gif'},
   { name: 'Venus', info: 'Venus is the second planet from the Sun.', image: 'venus.gif' },
-  { name: 'Earth', info: 'Earth is our home planet.', image: 'logo.jpg' },
+  { name: 'Earth', info: 'Earth is our home planet.', image: 'logo.jpg', path: '/earth' },
   { name: 'Mars', info: 'Mars is the fourth planet and is known as the Red Planet.', image: 'mars.jpg' },
   { name: 'Jupiter', info: 'Jupiter is the largest planet in the solar system.', image: 'jupiter.gif' },
   { name: 'Saturn', info: 'Saturn is known for its rings.', image: 'saturn.jpg' },
-  { name: 'Uranus', info: 'Uranus is an ice giant.', image: 'uranus.png' },
+  { name: 'Uranus', info: 'Uranus is an ice giant.', image: 'uranus.png'},
   { name: 'Neptune', info: 'Neptune is the farthest planet from the Sun.', image: 'neptune.jpg' },
 ];
 

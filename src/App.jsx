@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './Components/Home/Home';
+import Earth from './Components/Earth/Earth';
 
 
 const App = () => {
@@ -9,7 +10,8 @@ const App = () => {
     <Router>
       
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/solarSystem" element={<Home/>} />
+        <Route path="/" element={<Earth/>} />
        
       </Routes>
     </Router>

@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        kablammo: ['Kablammo', 'cursive'], // Adding Kablammo to Tailwind
+        kablammo: ['Kablammo', 'cursive'],
+        IBM: ['IBM Plex Mono', 'monospace'],
       },
     },
   },
