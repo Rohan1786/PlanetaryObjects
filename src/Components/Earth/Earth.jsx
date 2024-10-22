@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './EarthStyle.css'; // Import the external CSS file
+import { Link } from 'react-router-dom';
 
 const Earth = () => {
   const [Solar, setSolar] = useState();
@@ -32,7 +33,12 @@ const Earth = () => {
             </p>
             <div>
               <button className="font-kablammo font-bold bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">
-                <a href='/solarsystem'>I belong to the Solar System</a> 
+              <Link
+            to="/solarsystem"
+            className="text-white hover:text-yellow-400 text-lg transition-all duration-300"
+          >
+            Contact
+          </Link>
               </button>
             </div>
           </div>
