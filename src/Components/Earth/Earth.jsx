@@ -31,8 +31,8 @@ const Earth = () => {
               Its rotation creates day and night, and it takes 365 days to orbit the Sun, creating the cycle of seasons.
             </p>
             <div>
-              <button onClick={SolarCall} className="font-kablammo font-bold bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">
-                I belong to the Solar System
+              <button className="font-kablammo font-bold bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">
+                <a href='/solarSystem'>I belong to the Solar System</a> 
               </button>
             </div>
           </div>
